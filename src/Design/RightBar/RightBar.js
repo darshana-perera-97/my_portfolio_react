@@ -1,4 +1,7 @@
 import React from "react";
+import SingleTopic from "./SingleTopic";
+import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+
 
 export default function RightBar() {
   return (
@@ -11,15 +14,20 @@ export default function RightBar() {
         height: "100%",
       }}
     >
-      <p
-        style={{
-          color: "white",
-          textOrientation: "mixed",
-          writingMode: "vertical-rl",
-        }}
-      >
-        RightBar
-      </p>
+      <Router>
+        <Link to="/">
+          <SingleTopic data="Home" />
+        </Link>
+        <Link to="/projects">
+          <SingleTopic data="Projets" />
+        </Link>
+        <Link to="/about">
+          <SingleTopic data="About" />
+        </Link>
+        <Link to="/contacts">
+          <SingleTopic data="Contacts" />
+        </Link>
+      </Router>      
     </div>
   );
 }
